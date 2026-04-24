@@ -2,7 +2,7 @@
    EXPERTS SALON — GLOBAL DESIGN SYSTEM
    ============================================ */
 
-/* Design Tokens */
+/* Design Tokens — Dark (default) */
 :root {
   --black: #0a0a0a;
   --black-soft: #111111;
@@ -339,4 +339,57 @@ img {
     padding: 13px 24px;
     font-size: 0.9rem;
   }
+}
+
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
+[data-theme="light"] {
+  --black: #f0ece4;
+  --black-soft: #e8e2d8;
+  --black-card: #eae4da;
+  --white: #1a1a1a;
+  --white-pure: #2a2420;
+  --beige: #2e2924;
+  --beige-dark: #3a342d;
+  --beige-card: #312c26;
+  --text-dark: #f5f0e8;
+  --text-muted: #b8a898;
+  --text-light: #907860;
+  --text-white: #f5f0e8;
+  --text-white-muted: rgba(245, 240, 232, 0.7);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth theme transition */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light theme section backgrounds */
+[data-theme="light"] .section--white {
+  background: #1e1a16;
+}
+
+[data-theme="light"] .section--beige {
+  background: #2a2420;
+}
+
+[data-theme="light"] .section--dark {
+  background: #0a0a0a;
+}
+
+[data-theme="light"] .card {
+  background: #2a2420;
+  border-color: rgba(201, 169, 110, 0.15);
+}
+
+[data-theme="light"] .navbar--solid {
+  background: rgba(26, 20, 14, 0.95);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #1a1410;
 }

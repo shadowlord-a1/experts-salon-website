@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ThemeProvider } from './context/ThemeContext'
 
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -44,7 +45,7 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <ThemeProvider>
       <Navbar />
       <main>
         {/* 1. Hero — Dark */}
@@ -77,6 +78,6 @@ export default function App() {
 
       <Footer />
       <FloatingCTA />
-    </>
+    </ThemeProvider>
   )
 }

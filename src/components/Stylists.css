@@ -1,0 +1,136 @@
+.stylists-section { overflow: hidden; }
+
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.stylist-card {
+  padding: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.stylist-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+.stylist-card__avatar-wrap {
+  padding: 40px 40px 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--beige) 0%, transparent 100%);
+  width: 100%;
+}
+
+.stylist-card__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(201,169,110,0.35);
+  transition: var(--transition);
+}
+
+.stylist-card:hover .stylist-card__avatar {
+  transform: scale(1.06);
+  box-shadow: var(--shadow-gold);
+}
+
+.stylist-card__avatar span {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.stylist-card__avatar-ring {
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,169,110,0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: var(--transition);
+}
+
+.stylist-card:hover .stylist-card__avatar-ring {
+  border-color: rgba(201,169,110,0.6);
+  width: 124px;
+  height: 124px;
+}
+
+.stylist-card__body {
+  padding: 0 36px 36px;
+}
+
+.stylist-card__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.stylist-card__role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.stylist-card__bio {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.stylist-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.stylist-tag {
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: var(--beige);
+  color: var(--text-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: var(--transition-fast);
+}
+
+.stylist-tag:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 700px) {
+  .stylists-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+}

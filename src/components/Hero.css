@@ -1,0 +1,213 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* Background Image */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+/* Dark gradient overlay */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+/* Cinematic vignette */
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Content */
+.hero__content {
+  position: relative;
+  z-index: 3;
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 80px;
+  max-width: 720px;
+}
+
+.hero__badge {
+  margin-bottom: 28px;
+  opacity: 0;
+}
+
+.hero__heading {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 0.28em;
+}
+
+.hero__word {
+  display: inline-block;
+  opacity: 0;
+}
+
+.hero__word--gold {
+  color: var(--gold);
+}
+
+.hero__heading br {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(250, 250, 250, 0.82);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0;
+  font-weight: 400;
+}
+
+/* CTA Buttons */
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.hero__btn-whatsapp {
+  font-size: 1rem;
+  padding: 15px 36px;
+  letter-spacing: 0.01em;
+}
+
+/* Microcopy */
+.hero__micro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(250, 250, 250, 0.55);
+  font-size: 0.82rem;
+  margin-bottom: 36px;
+  opacity: 0;
+}
+
+.hero__micro-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25d366;
+  display: inline-block;
+  box-shadow: 0 0 8px #25d366;
+  flex-shrink: 0;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 8px #25d366; transform: scale(1); }
+  50% { box-shadow: 0 0 16px #25d366; transform: scale(1.3); }
+}
+
+/* Free Consultation Banner */
+.hero__banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.28);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  max-width: 100%;
+}
+
+.hero__banner-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+}
+
+.hero__scroll-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  font-weight: 500;
+}
+
+.hero__scroll-arrow {
+  color: var(--gold);
+  animation: scrollBounce 2s ease-in-out infinite;
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding-top: calc(var(--nav-height) + 24px);
+    padding-bottom: 100px;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}

@@ -1,0 +1,110 @@
+.pricing-section { overflow: hidden; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--white-pure);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  padding: 36px 28px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(201,169,110,0.3);
+}
+
+.pricing-card--popular {
+  border-color: var(--gold);
+  background: linear-gradient(145deg, #faf7f0, #fff);
+  box-shadow: 0 8px 40px rgba(201,169,110,0.18);
+}
+
+.pricing-card--popular:hover {
+  box-shadow: 0 20px 60px rgba(201,169,110,0.28);
+}
+
+.pricing-card__popular {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--black);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.pricing-card__icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.pricing-card__price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--gold-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.pricing-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.pricing-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.pricing-note a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.pricing-note a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

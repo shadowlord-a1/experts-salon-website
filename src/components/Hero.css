@@ -193,7 +193,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(var(--nav-height) + 80px);
+    padding-top: calc(var(--nav-height) + 60px);
   }
 
   .hero__content {
